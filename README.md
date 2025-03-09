@@ -1,50 +1,62 @@
-# React + TypeScript + Vite
+# ProjectOrg - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es el frontend de **ProjectOrg**, una aplicación de gestión de proyectos. Está desarrollado con **React**, **TypeScript** y utiliza **Material-UI** para la interfaz de usuario.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías
+- **React** (con Vite)
+- **TypeScript**
+- **Material-UI**
+- **React Router**
+- **JWT para autenticación**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📂 Estructura del Proyecto
+```
+projectorg-frontend/
+│── src/
+│   ├── components/       # Componentes reutilizables
+│   ├── pages/            # Páginas principales
+│   ├── services/         # Llamadas a la API
+│   ├── context/          # Manejo de estado global
+│   ├── hooks/            # Hooks personalizados
+│── public/               # Archivos estáticos
+│── vite.config.ts        # Configuración de Vite
+│── package.json          # Dependencias y scripts
+│── README.md             # Documentación
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## ⚙️ Configuración
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+1. **Clonar el repositorio:**
+```sh
+git clone https://github.com/tuusuario/projectorg-frontend.git
+cd projectorg-frontend
 ```
+
+2. **Instalar dependencias:**
+```sh
+yarn install  # O npm install
+```
+
+3. **Configurar variables de entorno:**
+Crea un archivo `.env` en la raíz del proyecto con:
+```sh
+VITE_API_URL=http://localhost:8080
+```
+
+4. **Ejecutar el proyecto:**
+```sh
+yarn dev  # O npm run dev
+```
+El frontend estará disponible en `http://localhost:5173/`.
+
+## 🔑 Autenticación
+El frontend usa **JWT** para la autenticación. Tras hacer login, el token se almacena en **localStorage** y se usa en las solicitudes a la API.
+
+## 📌 Funcionalidades
+- **Inicio de sesión y registro**.
+- **Gestión de proyectos y tareas**.
+- **Edición de tareas con selección de estado**.
+
+## 📜 Licencia
+Este proyecto está bajo la licencia **MIT**.
+
